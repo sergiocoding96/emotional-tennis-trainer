@@ -1,0 +1,39 @@
+{
+  "name": "emotional-tennis-trainer",
+  "version": "1.0.0",
+  "description": "An emotional intelligence tennis app trainer. This app includes educational materials for tennis players to understand their emotions, as well as a routines builder tool",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiocoding96/emotional-tennis-trainer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiocoding96/emotional-tennis-trainer/issues"
+  },
+  "homepage": "https://github.com/sergiocoding96/emotional-tennis-trainer#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.87.1",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-router-dom": "^7.10.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7"
+  }
+}
