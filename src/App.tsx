@@ -3,6 +3,7 @@ import { useAuth } from './context/AuthContext'
 import { AuthForm } from './components/auth/AuthForm'
 import EmotionalFramework from './features/framework/EmotionalFramework'
 import EmotionalRoutineBuilder from './features/routines/EmotionalRoutineBuilder'
+import MatchDebriefing from './features/debrief/MatchDebriefing'
 
 // Home component with Tailwind styling
 function Home() {
@@ -66,7 +67,36 @@ function Home() {
         )}
 
         {/* Feature Cards */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Match Debrief Card - Featured */}
+          <Link
+            to="/debrief"
+            className="group rounded-3xl bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 p-8 hover:border-amber-500/50 transition-all duration-300 md:col-span-2 lg:col-span-1"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <span className="text-3xl">{'\u{1F4AC}'}</span>
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold text-white">Match Debrief</h2>
+                <p className="text-slate-400 text-sm">AI Coaching Chat</p>
+              </div>
+            </div>
+            <p className="text-slate-400 mb-4">
+              Chat with an AI coach to analyze your match, understand emotional patterns, and create reframes for unhelpful thoughts.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {['AI Analysis', 'Guided Reflection', 'Reframing'].map((feature) => (
+                <span key={feature} className="px-3 py-1 rounded-full bg-slate-800/50 text-slate-400 text-xs">
+                  {feature}
+                </span>
+              ))}
+            </div>
+            <div className="mt-4 text-amber-400 text-sm font-medium group-hover:translate-x-2 transition-transform">
+              Start Debriefing {'\u2192'}
+            </div>
+          </Link>
+
           {/* Emotional Framework Card */}
           <Link
             to="/framework"
@@ -186,6 +216,7 @@ export default function App() {
       <Route path="/login" element={<AuthForm />} />
       <Route path="/framework" element={<EmotionalFramework />} />
       <Route path="/builder" element={<EmotionalRoutineBuilder />} />
+      <Route path="/debrief" element={<MatchDebriefing />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
